@@ -22,12 +22,12 @@ namespace TestingMood
         public void ExceptionHandling(string message)
         {
             string expected = "HAPPY";
-   Program mood = new Program(message);
+             Program mood = new Program(message);
 
         string MoodAnalyze=mood.Mood_Analyze();
             Assert.AreEqual(expected,MoodAnalyze);
-
         }
+
 
     }
 }

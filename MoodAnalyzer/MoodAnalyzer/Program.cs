@@ -32,7 +32,20 @@ namespace MoodAnalyzer
                 return "HAPPY";
             }
         }
+    }
 
+    public class CustomException:Exception
+    {
+        public enum Exception_Type
+        {
+            NULL_MESSAGE,EMPTY_MESSAGE,NO_SUCH_FIELD,
+            NO_SUCH_METHOD,NO_SUCH_CLASS,OBJECT_CREATION_ISSUE
+        }
+        private readonly Exception_Type type;
 
+        public CustomException(Exception_Type Type,string message)
+        {
+            this.type = Type;
+        }
     }
 }
