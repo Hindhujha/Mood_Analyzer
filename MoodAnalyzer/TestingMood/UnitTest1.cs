@@ -14,5 +14,12 @@ namespace TestingMood
             Assert.AreEqual("HAPPY", Mood);
         }
 
+        [TestMethod] //sad
+        public void TestSad()
+        {
+            string Mood = mood.Sad();
+            Assert.AreEqual("I AM IN SAD MOOD", Mood);
+        }
+
     }
 }
