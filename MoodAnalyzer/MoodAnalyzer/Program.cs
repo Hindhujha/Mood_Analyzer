@@ -17,6 +17,8 @@ namespace MoodAnalyzer
     }
     public class Program
     {
+        public Program() { }
+      
         public string message;
 
 

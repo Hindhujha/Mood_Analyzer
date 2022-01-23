@@ -59,6 +59,13 @@ namespace TestingMood
                 Assert.AreEqual("MOOD SHOULD NOT BE NULL", e.Message);
             }
         }
-
+        [TestMethod]
+        public void MoodAnalyse_Object()
+        {
+            string message = null;
+            object expected = new Program(message);
+            object obj = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzer.Program", "Program");
+            expected.Equals(obj);
+        }
     }
 }
