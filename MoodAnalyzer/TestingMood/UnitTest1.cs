@@ -18,7 +18,7 @@ namespace TestingMood
         }
 
         [TestMethod]
-        [DataRow(null)]
+        [DataRow("I AM IN HAPPY MOOD")]
         public void ExceptionHandling(string message)
         {
             string expected = "HAPPY";
@@ -27,7 +27,22 @@ namespace TestingMood
         string MoodAnalyze=mood.Mood_Analyze();
             Assert.AreEqual(expected,MoodAnalyze);
         }
+        
+        [TestMethod]
+        public void ThrowException_Empty()
+        {
+            try
+            {
+                string message = " ";
+                Program mood = new Program(message);
 
+                string MoodAnalyze = mood.Mood_Analyze();
+            }
+            catch(CustomException e)
+            {
+                Assert.AreEqual("MOOD SHOULD NOT BE EMPTY", e.Message);
+            }
+        }
 
     }
 }
