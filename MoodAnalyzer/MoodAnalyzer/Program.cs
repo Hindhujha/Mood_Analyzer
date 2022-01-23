@@ -13,6 +13,17 @@ namespace MoodAnalyzer
             string Mood = "HAPPY";
             return Mood;
         }
-    
+
+        public string Sad()
+        {
+            string SAD = "I AM IN SAD MOOD";
+            return SAD;
+        }
+
+        public string Happy()
+        {
+            string HAPPY = "I AM IN ANY MOOD";
+            return HAPPY;
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace TestingMood
        public Program mood = new Program();
        
         [TestMethod]
-        public void Mood()
+        public void Mood()//happy
         {
             string Mood = mood.Analyze();
             Assert.AreEqual("HAPPY", Mood);
@@ -21,5 +21,11 @@ namespace TestingMood
             Assert.AreEqual("I AM IN SAD MOOD", Mood);
         }
 
+        [TestMethod] //any
+        public void TestHappy()
+        {
+            string Mood = mood.Happy();
+            Assert.AreEqual("I AM IN ANY MOOD", Mood);
+        }
     }
 }
