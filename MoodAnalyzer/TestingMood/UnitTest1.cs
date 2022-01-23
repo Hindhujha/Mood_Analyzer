@@ -2,30 +2,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MoodAnalyzer;
 namespace TestingMood
 {
+
     [TestClass]
     public class UnitTest1
     {
-       public Program mood = new Program();
-       
         [TestMethod]
-        public void Mood()//happy
+        public void Mood()
         {
-            string Mood = mood.Analyze();
-            Assert.AreEqual("HAPPY", Mood);
+            string expected = "SAD";
+            string message = "I AM IN SAD MOOD";
+           Program mood = new Program(message);
+        string MoodAnalyze = mood.Mood_Analyze();
+
+            Assert.AreEqual(expected, MoodAnalyze);
         }
 
-        [TestMethod] //sad
-        public void TestSad()
+        [TestMethod]
+        [DataRow(null)]
+        public void ExceptionHandling(string message)
         {
-            string Mood = mood.Sad();
-            Assert.AreEqual("I AM IN SAD MOOD", Mood);
+            string expected = "HAPPY";
+   Program mood = new Program(message);
+
+        string MoodAnalyze=mood.Mood_Analyze();
+            Assert.AreEqual(expected,MoodAnalyze);
+
         }
 
-        [TestMethod] //any
-        public void TestHappy()
-        {
-            string Mood = mood.Happy();
-            Assert.AreEqual("I AM IN ANY MOOD", Mood);
-        }
     }
 }

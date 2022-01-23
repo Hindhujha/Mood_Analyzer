@@ -1,29 +1,38 @@
 ﻿using System;
 namespace MoodAnalyzer
 {
-  public  class Program
+    public class Program
     {
+        public string message;
+
+        public Program(string message)
+            {
+            this.message = message;
+            }
         static void Main(string[] args)
         {
             Console.WriteLine("WELCOME TO MOOD ANALYZER PROGRAMS");
         }
 
-        public string Analyze()
+        public string Mood_Analyze()
         {
-            string Mood = "HAPPY";
-            return Mood;
+            try
+            {
+                if (message.Contains("SAD"))
+                {
+                    return "SAD";
+                }
+                else
+                {
+                    return "HAPPY";
+                }
+            }
+            catch
+            {
+                return "HAPPY";
+            }
         }
 
-        public string Sad()
-        {
-            string SAD = "I AM IN SAD MOOD";
-            return SAD;
-        }
 
-        public string Happy()
-        {
-            string HAPPY = "I AM IN ANY MOOD";
-            return HAPPY;
-        }
     }
 }
