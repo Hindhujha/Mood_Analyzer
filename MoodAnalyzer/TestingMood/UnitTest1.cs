@@ -44,5 +44,21 @@ namespace TestingMood
             }
         }
 
+        [TestMethod]
+        public void ThrowException_Null()
+        {
+            try
+            {
+                string message = null;
+                Program mood = new Program(message);
+
+                string MoodAnalyze = mood.Mood_Analyze();
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual("MOOD SHOULD NOT BE NULL", e.Message);
+            }
+        }
+
     }
 }

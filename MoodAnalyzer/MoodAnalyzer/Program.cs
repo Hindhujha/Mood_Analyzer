@@ -10,7 +10,7 @@ namespace MoodAnalyzer
         }
         private readonly Exception_Type type;
 
-        public CustomException(Exception_Type Type, string message)
+        public CustomException(Exception_Type Type, string message):base (message)
         {
             this.type = Type;
         }
@@ -37,6 +37,7 @@ namespace MoodAnalyzer
                 {
                     throw new CustomException(CustomException.Exception_Type.EMPTY_MESSAGE, "MOOD SHOULD NOT BE EMPTY");
                 }
+
                 if (message.Contains("SAD"))
                 {
                     return "SAD";
