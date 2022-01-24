@@ -83,6 +83,12 @@ namespace TestingMood
             Assert.AreEqual(expected, mood);
         
         }
+        [TestMethod]
+        public void SetHappyMessage()
+        {
+            string result = MoodAnalyzerFactory.SetField("HAPPY", "message");
+            Assert.AreEqual("HAPPY", result);
+        }
     }
 }
 

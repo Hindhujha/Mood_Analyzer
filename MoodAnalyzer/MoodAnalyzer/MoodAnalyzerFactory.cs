@@ -63,24 +63,10 @@ public static object CreateMoodAnalyse(string className,string constructorName)
             }
         }
 
-        public static string InvokeAnalyseMood(string message,string methodName)
-        {
-            try
-            {
-                Type type = Type.GetType("MoodAnalyzer.Program");
-                object moodAnalyseObject = MoodAnalyzerFactory.CreateMoodAnalyseParameter("MoodAnalyzer.Program", "Program", message);
-                MethodInfo analyseMoodInfo=type.GetMethod(methodName);
-                object mood = analyseMoodInfo.Invoke(moodAnalyseObject, null);
-                return mood.ToString();
-            }
-            catch(NullReferenceException)
-            {
-                throw new CustomException(CustomException.Exception_Type.NO_SUCH_METHOD, "METHOD IS NOT FOUND");
-            }
-        }
 
 
-        public static string SetString(string message, string fieldName)
+
+        public static string SetField(string message, string fieldName)
         {
             try
             {
