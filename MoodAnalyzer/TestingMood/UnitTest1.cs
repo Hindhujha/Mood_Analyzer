@@ -74,7 +74,16 @@ namespace TestingMood
             object expected = new Program("HAPPY");
             object obj = MoodAnalyzerFactory.CreateMoodAnalyseParameter("MoodAnalyzer.Program","Program","HAPPY");
             expected.Equals(obj);
-
+        }
+        [TestMethod]
+        public void ReturnHappy()
+        {
+            string expected = "HAPPY";
+            string mood = MoodAnalyzerFactory.InvokeAnalyseMood("HAPPY", "MoodAnalyzer.Main");
+            Assert.AreEqual(expected, mood);
+        
         }
     }
 }
+
+    
