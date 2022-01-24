@@ -67,5 +67,14 @@ namespace TestingMood
             object obj = MoodAnalyzerFactory.CreateMoodAnalyse("MoodAnalyzer.Program", "Program");
             expected.Equals(obj);
         }
+
+        [TestMethod]
+        public void MoodAnalyse_ParameterizedConstructor()
+        { 
+            object expected = new Program("HAPPY");
+            object obj = MoodAnalyzerFactory.CreateMoodAnalyseParameter("MoodAnalyzer.Program","Program","HAPPY");
+            expected.Equals(obj);
+
+        }
     }
 }
