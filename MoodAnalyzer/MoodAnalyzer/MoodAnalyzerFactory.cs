@@ -79,7 +79,27 @@ public static object CreateMoodAnalyse(string className,string constructorName)
             }
         }
 
-     
+
+        public static string SetString(string message, string fieldName)
+        {
+            try
+            {
+                Program moodAnalyse = new Program();
+                Type type = typeof(Program);
+                FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                if(message==null)
+                {
+                    throw new CustomException(CustomException.Exception_Type.NO_SUCH_FIELD, "MESSAGE SHOULD NOT BE NULL");
+                }
+                field.SetValue(moodAnalyse, message);
+                return moodAnalyse.message;
+            }
+            catch (NullReferenceException)
+            {
+                throw new CustomException(CustomException.Exception_Type.NO_SUCH_FIELD, "FIELD IS IS NOT FOUND");
+            }
+        }
+
     }
 }
 
